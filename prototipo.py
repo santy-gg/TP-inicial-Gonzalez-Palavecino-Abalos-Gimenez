@@ -12,6 +12,13 @@ filepath = r"./DataSet_desempenio.csv"
 df = pd.read_csv(filepath, encoding="utf-8")  
 print(df)
 
+#como todos los datos que nos interesan no son categoricos no hace falta hacer ninguna transformacion
+#dividimos las caracteristicas del objetivo
+#x representa a las caracteristicas. Se elimino las columnas que no nos interesa para el entrenamiento.
+X = df.drop(['Nombre', 'Apellido', 'Puntaje_desempeño'], axis=1)
+#y representa el objetivo => Puntaje_desempeño
+y = df["Puntaje_desempeño"]
+
 # Selecciono las columnas para la regresión
 x = df[["Horas_capacitacion", "Antiguedad", "Calificacion_previa"]]
 y = df['Puntaje_desempeño']  
