@@ -3,11 +3,13 @@
 # Importo las librerías necesarias
 import numpy as np  
 import pandas as pd  
-import matplotlib.pyplot as plt  
+##import matplotlib.pyplot as plt  
 from sklearn.linear_model import LinearRegression  
 
 # Leo el dataset desde el archivo CSV
-df = pd.read_csv('example.csv')  
+filepath = r"./DataSet_desempenio.csv"
+df = pd.read_csv(filepath, encoding="utf-8")  
+print(df)
 
 # Selecciono las columnas para la regresión
 x = df[["Horas_capacitacion", "Antiguedad", "Calificacion_previa"]]
