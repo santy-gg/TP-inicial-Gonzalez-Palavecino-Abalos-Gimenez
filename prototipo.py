@@ -16,7 +16,7 @@ print(df)
 #como todos los datos que nos interesan no son categoricos no hace falta hacer ninguna transformacion
 #dividimos las caracteristicas del objetivo
 #x representa a las caracteristicas. Se elimino las columnas que no nos interesa para el entrenamiento.
-X = df.drop(['Nombre', 'Apellido', 'Puntaje_desempeño'], axis=1)
+X = df.drop(['ID','Nombre', 'Apellido', 'Puntaje_desempeño'], axis=1)
 #y representa el objetivo => Puntaje_desempeño
 y = df["Puntaje_desempeño"] 
 
@@ -25,6 +25,15 @@ y = df["Puntaje_desempeño"]
 #random_state=1 la division es constante, la misma division aleatoria cada vez
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = 0.4, random_state = 1)
 
+#Creamos el modelo de regresion lineal
+model = LinearRegression()
+
+#Entrenamos el modelo con los datos de entrenamiento
+model.fit(x_train, y_train)
+
+#Momentaniamente muestro los coeficientes y el incercepto
+print('Coeficientes:', model.coef_)
+print('Intercepcion', model.intercept_)
 #Graficamos los datos cuando nos lo da el modelo
 # plt.scatter(x, y, color='blue')
 # plt.xlabel('Puntaje de desempeño real')
