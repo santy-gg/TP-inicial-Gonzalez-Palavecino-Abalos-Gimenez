@@ -1,4 +1,4 @@
-ID,Nombre,Apellido,Horas_capacitacion,Antiguedad ,Calificacion_previa,Puntaje_desempeño
+ID,Nombre,Apellido,Horas_capacitacion,Antiguedad,Calificacion_previa,Puntaje_desempeño
 1,Juan,Perez,12,3,78,22.5
 2,Maria,Gomez,35,7,92,38
 3,Carlos,Lopez,8,2,65,17.6

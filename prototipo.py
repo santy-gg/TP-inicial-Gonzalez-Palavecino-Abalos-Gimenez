@@ -23,7 +23,7 @@ y = df["Puntaje_desempeño"]
 #dividimos el dataset en un conjunto de entrenamiento y uno de prueba
 #test_size=0.4 40% de data es para test y 60% para training
 #random_state=1 la division es constante, la misma division aleatoria cada vez
-x_train, x_test, y_train, x_test = train_test_split(X, y, test_size = 0.4, random_state = 1)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = 0.4, random_state = 1)
 
 #Graficamos los datos cuando nos lo da el modelo
 # plt.scatter(x, y, color='blue')
