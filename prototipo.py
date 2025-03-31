@@ -36,6 +36,7 @@ model.fit(x_train, y_train)
 print('Coeficientes:', model.coef_)
 print('Intercepcion', model.intercept_)
 
+<<<<<<< HEAD
 # Realizamos predicciones con el conjunto de prueba
 y_pred = model.predict(x_test)
 
@@ -49,6 +50,14 @@ print(f'MSE en conjunto de entrenamiento: {mse_train}')
 print(f'MSE en conjunto de prueba: {mse}')
 
 
+=======
+#Hacemos una prediccion del modelo de regresion lineal
+pred = model.predict(x_test)
+
+#Calculamos el error cuadratico medio(MSE) usando la prediccion
+mse = mean_squared_error(y_test,pred)
+print('MSE:',mse)
+>>>>>>> beeee31c9f14cdb336c9be3971b5f5451fa67ec7
 
 #Graficamos los datos cuando nos lo da el modelo
 # plt.scatter(x, y, color='blue')
