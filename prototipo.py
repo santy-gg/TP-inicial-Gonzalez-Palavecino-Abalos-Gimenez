@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LinearRegression  
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 
 # Leo el dataset desde el archivo CSV
 filepath = r"./DataSet_desempenio.csv"
@@ -34,6 +35,21 @@ model.fit(x_train, y_train)
 #Momentaniamente muestro los coeficientes y el incercepto
 print('Coeficientes:', model.coef_)
 print('Intercepcion', model.intercept_)
+
+# Realizamos predicciones con el conjunto de prueba
+y_pred = model.predict(x_test)
+
+# Calculamos el MSE (Error Cuadrático Medio)
+mse = mean_squared_error(y_test, y_pred)
+print(f'Error Cuadrático Medio (MSE): {mse}')
+
+y_train_pred = model.predict(x_train)
+mse_train = mean_squared_error(y_train, y_train_pred)
+print(f'MSE en conjunto de entrenamiento: {mse_train}')
+print(f'MSE en conjunto de prueba: {mse}')
+
+
+
 #Graficamos los datos cuando nos lo da el modelo
 # plt.scatter(x, y, color='blue')
 # plt.xlabel('Puntaje de desempeño real')
