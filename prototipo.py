@@ -55,3 +55,42 @@ print('Datos a testear:')
 print(x_train)
 
 print('Resultados de los datos de pruebas: ', np.round(y_pred).astype(int))
+
+def show_menu():
+    print("""
+    ******************************************
+    *                  MENÚ                  *
+    ******************************************
+    *         Seleccione una opción:         *
+    ******************************************
+    *    1.  Cargar datos manuales           *
+    *    2.  Salir                           *
+    ******************************************
+    """)
+
+def show_inputs():
+    horas_capacitacion = int(input('Ingrese las horas de capacitacion: '))
+    antiguedad = int(input('Ingrese los años de antiguedad: '))
+    Calificacion_previa = int(input('Ingrese la calificacion previa: '))
+
+    nuevo_desempeño = np.array([[horas_capacitacion,antiguedad,Calificacion_previa]])
+
+    nueva_prediccion = model.predict(nuevo_desempeño)
+
+    print(f'Predicción de puntaje: {round(nueva_prediccion[0],0)}')
+
+isFinish = False
+
+while not isFinish:
+
+    show_menu()
+
+    opcion = int(input('Ingrese una opcion: '))
+    
+    if opcion not in (1, 2):
+        print('Ingrese una opción válida')
+    elif opcion == 1:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        show_inputs()
+    elif opcion == 2:
+        isFinish = True
