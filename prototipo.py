@@ -3,6 +3,7 @@
 # Importo las librerías necesarias
 import numpy as np  
 import pandas as pd  
+import os
 ##import matplotlib.pyplot as plt  
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LinearRegression  
@@ -47,3 +48,10 @@ y_train_pred = model.predict(x_train)
 mse_train = mean_squared_error(y_train, y_train_pred)
 print(f'MSE en conjunto de entrenamiento: {mse_train}')
 print(f'MSE en conjunto de prueba: {mse}')
+
+print()
+
+print('Datos a testear:')
+print(x_train)
+
+print('Resultados de los datos de pruebas: ', np.round(y_pred).astype(int))
