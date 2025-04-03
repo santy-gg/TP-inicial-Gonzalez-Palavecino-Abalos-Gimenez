@@ -87,13 +87,15 @@ while not isFinish:
 
     show_menu()
 
-    opcion = int(input('Ingrese una opcion: '))
+    try:
+        opcion = int(input('Ingrese una opcion: '))
     
-    if opcion not in (1, 2):
-        print('Ingrese una opción válida')
-    elif opcion == 1:
-        os.system('cls' if os.name == 'nt' else 'clear')
-        show_inputs()
-    elif opcion == 2:
-        isFinish = True
-
+        if opcion not in (1, 2):
+            print('Ingrese una opción válida')
+        elif opcion == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            show_inputs()
+        elif opcion == 2:
+            isFinish = True
+    except:
+        print('Caracter ingresado invalido, ingrese un caracter numerico')
