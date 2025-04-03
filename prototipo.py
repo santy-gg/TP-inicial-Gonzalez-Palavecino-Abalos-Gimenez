@@ -47,10 +47,3 @@ y_train_pred = model.predict(x_train)
 mse_train = mean_squared_error(y_train, y_train_pred)
 print(f'MSE en conjunto de entrenamiento: {mse_train}')
 print(f'MSE en conjunto de prueba: {mse}')
-
-#Hacemos una prediccion del modelo de regresion lineal
-pred = model.predict(x_test)
-
-#Calculamos el error cuadratico medio(MSE) usando la prediccion
-mse = mean_squared_error(y_test,pred)
-print('MSE:',mse)
