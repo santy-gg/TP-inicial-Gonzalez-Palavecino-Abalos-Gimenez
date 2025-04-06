@@ -1,11 +1,31 @@
+import React from "react";
+import { useContext, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Prototipo from "../Page/Prototipo.jsx";
 
-function App() {
+const App = () => {
+  return (
+    <Router>
+      <MainApp />
+    </Router>
+  );
+};
 
+const MainApp = () => {
   return (
     <>
-      <h1>App</h1>
+      <main>
+        <Routes>
+          <Route path="/" element={<Prototipo />} />
+        </Routes>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
