@@ -1,9 +1,12 @@
+import React from "react";
+import styles from "./App.module.css";
+import HomePage from "./Pages/HomePage"
 
 function App() {
 
   return (
     <>
-      <h1>App</h1>
+      <HomePage />
     </>
   )
 }

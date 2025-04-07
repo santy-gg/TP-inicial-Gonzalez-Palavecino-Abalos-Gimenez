@@ -1,0 +1,27 @@
+.how_to_container {
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e8e9d2;
+    margin-bottom: 100px;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e9d2;
+}
+
+.title span {
+    background-color: #e8e9d2;
+    margin-bottom: 50px;
+}
+
+.cards_container {
+    background-color: #e8e9d2;
+    display: flex;
+    gap: 30px;
+}

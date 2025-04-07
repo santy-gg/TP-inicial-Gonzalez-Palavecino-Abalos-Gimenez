@@ -1,0 +1,45 @@
+.card_container {
+    border: 4px solid black;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.content_container {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.step_number {
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
