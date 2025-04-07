@@ -8,6 +8,7 @@ function ActionButtons() {
   const handleAddManual = () => {
     navigate("/ingresar-datos-manualmente");
   };
+
   // C:\Users\leosa\Desktop\TP-inicial-Gonzalez-Palavecino-Abalos-Gimenez\FrontEnd\src\Pages\AddManual.jsx
   return (
     <>
@@ -17,6 +18,7 @@ function ActionButtons() {
         </div>
         <div className={styles.buttons_container}>
           <button
+            onClick={() =>  navigate('/ingresar-csv')}
             className={`${styles.csv_button} ${styles.general_button_style}`}
           >
             Ingresar archivo CSV

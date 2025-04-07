@@ -1,0 +1,27 @@
+header {
+    height: 50px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+
+.back_btn {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: .3s all linear;
+    font-weight: bolder;
+}
+
+.back_btn:hover{
+    background: #2e5e4e;
+    color: #fff;
+}
