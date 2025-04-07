@@ -4,14 +4,6 @@ import HomePage from "./Pages/HomePage"
 
 const App = () => {
   return (
-    <Router>
-      <MainApp />
-    </Router>
-  );
-};
-
-const MainApp = () => {
-  return (
     <>
       <HomePage />
     </>

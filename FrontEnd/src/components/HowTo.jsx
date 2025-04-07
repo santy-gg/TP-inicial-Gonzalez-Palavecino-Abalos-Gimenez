@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HowTo.module.css";
 import HowToCard from "./HowToCard";
-import ingresar_opcion from "../assets/ingresar_opcion.png"
-import aplicando_algoritmo from "../assets/aplicando_algoritmo.png"
-import resultados from "../assets/resultados.png"
+import ingresar_opcion from "../../assets/ingresar_opcion.png"
+import aplicando_algoritmo from "../../assets/aplicando_algoritmo.png"
+import resultados from "../../assets/resultados.png"
 
 
 function HowTo() {
