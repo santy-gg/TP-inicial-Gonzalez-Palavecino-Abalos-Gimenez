@@ -2,13 +2,20 @@ import React from "react";
 import styles from "./App.module.css";
 import HomePage from "./Pages/HomePage"
 
-function App() {
+const App = () => {
+  return (
+    <Router>
+      <MainApp />
+    </Router>
+  );
+};
 
+const MainApp = () => {
   return (
     <>
       <HomePage />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
