@@ -1,0 +1,9 @@
+.load_csv_container{
+  width: 95%;
+  margin: 10px auto 0;
+}
+
+.upload_csv_section,
+.model_btn_controler_section{
+  padding: 5px 0;
+}

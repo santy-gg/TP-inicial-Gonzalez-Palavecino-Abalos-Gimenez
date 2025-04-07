@@ -1,0 +1,28 @@
+.model_btn_controler_container{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px ;
+}
+
+.btn_cont{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.general_btn{
+    padding: 8px 13px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.instructions_btn{
+    background: #A3D9FF;
+    color: #003366;
+}
+
+.train_model_btn{
+    background: #B6E2A1;
+    color: #1B4332;
+}
