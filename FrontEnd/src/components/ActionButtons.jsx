@@ -1,23 +1,41 @@
 import React from "react";
 import styles from "./ActionButtons.module.css";
+import { useNavigate } from "react-router-dom";
 
 function ActionButtons() {
-    return(
-        <>
-            <div className={styles.action_buttons_container}>
-                <div className={styles.title_container}>
-                    <div className={styles.title}>
-                        Selecciona una opcion
-                    </div>
-                </div>
-                <div className={styles.buttons_container}>
-                <button className={`${styles.csv_button} ${styles.general_button_style}`}>Ingresar archivo CSV</button>
-                <button className={`${styles.random_button} ${styles.general_button_style}`}>Calcular con datos random</button>
-                <button className={`${styles.manually_button} ${styles.general_button_style}`}>Ingresar datos manualmente</button>
-                </div>
-            </div>
-        </>
-    );
-};
+  const navigate = useNavigate();
+
+  const handleAddManual = () => {
+    navigate("/ingresar-datos-manualmente");
+  };
+  // C:\Users\leosa\Desktop\TP-inicial-Gonzalez-Palavecino-Abalos-Gimenez\FrontEnd\src\Pages\AddManual.jsx
+  return (
+    <>
+      <div className={styles.action_buttons_container}>
+        <div className={styles.title_container}>
+          <div className={styles.title}>Selecciona una opcion</div>
+        </div>
+        <div className={styles.buttons_container}>
+          <button
+            className={`${styles.csv_button} ${styles.general_button_style}`}
+          >
+            Ingresar archivo CSV
+          </button>
+          <button
+            className={`${styles.random_button} ${styles.general_button_style}`}
+          >
+            Calcular con datos random
+          </button>
+          <button
+            onClick={handleAddManual}
+            className={`${styles.manually_button} ${styles.general_button_style}`}
+          >
+            Ingresar datos manualmente
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default ActionButtons;
