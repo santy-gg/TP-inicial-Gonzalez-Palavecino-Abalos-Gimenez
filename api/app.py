@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -7,6 +8,7 @@ from sklearn.metrics import mean_squared_error
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 # Cargar el dataset y entrenar el modelo (lo hacemos al inicio)
 filepath = r"./DataSet_desempenio.csv"
@@ -117,5 +119,40 @@ def get_random_data_with_prediction():
     return jsonify({'data_with_predictions': generated_data_with_predictions,
                     'message': f'Se generaron y predijeron {num_samples} datos.'})
 
+@app.route('/upload_csv', methods=['POST'])
+def upload_csv():
+    """
+    Endpoint para cargar un nuevo CSV, entrenar el modelo y devolver los datos de prueba con predicciones.
+    """
+    if 'file' not in request.files:
+        return jsonify({'error': 'No se encontró ningún archivo en la solicitud.'}), 400
+
+    file = request.files['file']
+    df = pd.read_csv(file)
+
+    try:
+        X = df[['Horas_capacitacion', 'Antiguedad ', 'Calificacion_previa']]
+        y = df['Puntaje_desempeño']
+
+        x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+
+        model = LinearRegression()
+        model.fit(x_train, y_train)
+
+        y_test_pred = model.predict(x_test)
+
+        test_results = x_test.copy()
+        test_results['Puntaje_desempeño_real'] = y_test.values
+        test_results['Puntaje_desempeño_predicho'] = y_test_pred
+
+        test_results_json = test_results.to_dict(orient='records')
+
+        return jsonify({
+            'message': 'Modelo entrenado y predicciones generadas correctamente.',
+            'test_data_with_predictions': test_results_json
+        }), 200
+
+    except Exception as e:
+        return jsonify({'error': f'Error al procesar los datos o entrenar el modelo: {str(e)}'}), 500
 if __name__ == '__main__':
     app.run(debug=True)
