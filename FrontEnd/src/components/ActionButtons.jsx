@@ -8,7 +8,6 @@ function ActionButtons() {
   const handleAddManual = () => {
     navigate("/ingresar-datos-manualmente");
   };
-  // C:\Users\leosa\Desktop\TP-inicial-Gonzalez-Palavecino-Abalos-Gimenez\FrontEnd\src\Pages\AddManual.jsx
   return (
     <>
       <div className={styles.action_buttons_container}>
