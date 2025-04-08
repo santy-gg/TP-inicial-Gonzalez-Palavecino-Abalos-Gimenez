@@ -17,7 +17,7 @@ export const UploadCsv = () => {
           <div className={styles.logo_cont}>
             <img src={logo} alt="" />
           </div>
-          <h3>Arrastre el archivo a subir o</h3>
+          <h3>Arrastre el archivo a subir o cargelo de forma manual</h3>
           <button onClick={handleBtnClick} className={styles.upload_btn}>Subir archivo</button>
           <input ref={fileInputReader} className={styles.file_upload_input} type="file" accept=".csv, text/csv, application/vnd.ms-excel, application/csv" onChange={ e => console.log(e)}/>
         </div>
