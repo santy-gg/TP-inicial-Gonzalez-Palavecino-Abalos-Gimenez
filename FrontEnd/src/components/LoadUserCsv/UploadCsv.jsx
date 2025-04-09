@@ -1,14 +1,18 @@
-import React from 'react'
-import styles from './UploadCsv.module.css'
-import logo from '../../../assets/upload_logo.png'
-import { useRef } from 'react'
+import React, { useRef } from "react";
+import styles from "./UploadCsv.module.css";
+import logo from "../../../assets/upload_logo.png";
 
-export const UploadCsv = () => {
-  const fileInputReader = useRef(null)
+export const UploadCsv = ({ setSelectedFile }) => {
+  const fileInputReader = useRef(null);
 
   const handleBtnClick = () => {
-    fileInputReader.current.click()
-  }
+    fileInputReader.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file); 
+  };
 
   return (
     <>
@@ -17,11 +21,19 @@ export const UploadCsv = () => {
           <div className={styles.logo_cont}>
             <img src={logo} alt="" />
           </div>
-          <h3>Arrastre el archivo a subir o cargelo de forma manual</h3>
-          <button onClick={handleBtnClick} className={styles.upload_btn}>Subir archivo</button>
-          <input ref={fileInputReader} className={styles.file_upload_input} type="file" accept=".csv, text/csv, application/vnd.ms-excel, application/csv" onChange={ e => console.log(e)}/>
+          <h3>Seleccione el archivo para entrenar al modelo</h3>
+          <button onClick={handleBtnClick} className={styles.upload_btn}>
+            Subir archivo
+          </button>
+          <input
+            ref={fileInputReader}
+            className={styles.file_upload_input}
+            type="file"
+            accept=".csv, text/csv, application/vnd.ms-excel, application/csv"
+            onChange={handleFileChange} 
+          />
         </div>
       </div>
     </>
-  )
-}
+  );
+};

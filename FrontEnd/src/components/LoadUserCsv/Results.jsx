@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./results.module.css";
 
-export const Results = () => {
+export const Results = ({modelResults}) => {
   return (
     <>
-      <div className={styles.results_container}>
+      {modelResults.test_data_with_predictions && (
+        <div className={styles.results_container}>
         <span>Resultados</span>
         <hr />
         <table className="table">
@@ -18,30 +19,19 @@ export const Results = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>12</td>
-              <td>3</td>
-              <td>78</td>
-              <td>23</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>35</td>
-              <td>7</td>
-              <td>92</td>
-              <td>38</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>42</td>
-              <td>5</td>
-              <td>85</td>
-              <td>39</td>
-            </tr>
+            {modelResults.test_data_with_predictions.map((result, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>{result.Horas_capacitacion}</td>
+                <td>{result.Antiguedad }</td>
+                <td>{result.Calificacion_previa}</td>
+                <td>{result.Puntaje_desempeño_predicho.toFixed(1)}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+      )}
     </>
   );
 };
