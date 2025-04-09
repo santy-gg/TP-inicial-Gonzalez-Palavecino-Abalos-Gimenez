@@ -156,3 +156,20 @@ def upload_csv():
         return jsonify({'error': f'Error al procesar los datos o entrenar el modelo: {str(e)}'}), 500
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route('/ingresar_manualmente', methods=['POST'])
+def obtener_datos_prediccion():
+    """
+    Endpoint para cargar manualmente los datos que se quieren predecir
+    """
+    data = request.get_json()
+    dato1 = data.get("Horas_capacitacion")
+    dato2 = data.get("Antiguedad")
+    dato3 = data.get("Calificacion_previa")
+
+    nuevo_desempenio_manual = np.array([[dato1, dato2, dato3]])
+    nueva_prediccion_manual = model.predict(nuevo_desempenio_manual)
+
+    return jsonify({'prediccion_manual': float(nueva_prediccion_manual)})
+
+        
