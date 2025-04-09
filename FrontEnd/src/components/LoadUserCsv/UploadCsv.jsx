@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import styles from "./UploadCsv.module.css";
 import logo from "../../../assets/upload_logo.png";
 
-export const UploadCsv = ({ setSelectedFile }) => {
+function UploadCsv({ setSelectedFile }){
   const fileInputReader = useRef(null);
 
   const handleBtnClick = () => {
@@ -37,3 +37,5 @@ export const UploadCsv = ({ setSelectedFile }) => {
     </>
   );
 };
+
+export default UploadCsv;

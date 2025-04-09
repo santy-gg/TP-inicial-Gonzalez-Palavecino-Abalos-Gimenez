@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./results.module.css";
 
-export const Results = ({modelResults}) => {
+function Results({modelResults}){
   return (
     <>
       {modelResults.test_data_with_predictions && (
@@ -35,3 +35,5 @@ export const Results = ({modelResults}) => {
     </>
   );
 };
+
+export default Results;

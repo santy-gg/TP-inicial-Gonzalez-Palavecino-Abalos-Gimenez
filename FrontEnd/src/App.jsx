@@ -8,7 +8,7 @@ import {
 import styles from "./App.module.css";
 import HomePage from "./Pages/HomePage";
 import AddManual from "./Pages/AddManual";
-import { LoadUserCsv } from "./Pages/LoadUserCsv";
+import LoadUserCsv from "./Pages/LoadUserCsv";
 const App = () => {
   return (
     <>

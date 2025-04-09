@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./ModelBtnControler.module.css";
 
-export const ModelBtnControler = ({ handleBtnClick, selectedFile, setModelResults }) => {
-  
+function ModelBtnControler({ handleBtnClick, selectedFile, setModelResults }){
   const handleTrainModel = async () => {
     if (!selectedFile) {
       alert("Por favor, selecciona un archivo CSV antes de entrenar el modelo.");
@@ -49,3 +48,5 @@ export const ModelBtnControler = ({ handleBtnClick, selectedFile, setModelResult
     </>
   );
 };
+
+export default ModelBtnControler;
