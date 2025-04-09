@@ -19,7 +19,7 @@ function FormManual() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/ingresar_manualmente",
+        "http://127.0.0.1:5000/ingresar_manualmente/",
         {
           method: "POST",
           headers: {
