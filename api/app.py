@@ -119,6 +119,21 @@ def get_random_data_with_prediction():
     return jsonify({'data_with_predictions': generated_data_with_predictions,
                     'message': f'Se generaron y predijeron {num_samples} datos.'})
 
+@app.route('/ingresar_manualmente/', methods=['POST'])
+def obtener_datos_prediccion():
+    """
+    Endpoint para cargar manualmente los datos que se quieren predecir
+    """
+    data = request.get_json()
+    dato1 = float(data.get("Horas_capacitacion"))
+    dato2 = float(data.get("Antiguedad"))
+    dato3 = float(data.get("Calificacion_previa"))
+
+    nuevo_desempenio_manual = np.array([[dato1, dato2, dato3]])
+    nueva_prediccion_manual = model.predict(nuevo_desempenio_manual)
+
+    return jsonify({'prediccion_manual': float(nueva_prediccion_manual)})
+
 @app.route('/upload_csv', methods=['POST'])
 def upload_csv():
     """
@@ -157,19 +172,6 @@ def upload_csv():
 if __name__ == '__main__':
     app.run(debug=True)
 
-@app.route('/ingresar_manualmente', methods=['POST'])
-def obtener_datos_prediccion():
-    """
-    Endpoint para cargar manualmente los datos que se quieren predecir
-    """
-    data = request.get_json()
-    dato1 = data.get("Horas_capacitacion")
-    dato2 = data.get("Antiguedad")
-    dato3 = data.get("Calificacion_previa")
 
-    nuevo_desempenio_manual = np.array([[dato1, dato2, dato3]])
-    nueva_prediccion_manual = model.predict(nuevo_desempenio_manual)
-
-    return jsonify({'prediccion_manual': float(nueva_prediccion_manual)})
 
         
