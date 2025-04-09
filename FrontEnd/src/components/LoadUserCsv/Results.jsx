@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./results.module.css";
+import styles from "./Results.module.css";
 
 export const Results = ({modelResults}) => {
   return (
