@@ -5,7 +5,6 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import styles from "./App.module.css";
 import HomePage from "./Pages/HomePage";
 import AddManual from "./Pages/AddManual";
 import LoadUserCsv from "./Pages/LoadUserCsv";
