@@ -1,5 +1,7 @@
 .titulo_form {
   font-size: xx-large;
+  background-color: #e8e9d2;
+
 }
 
 .intro_manual {
@@ -7,6 +9,12 @@
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 50px;
+  background-color: #e8e9d2;
+
+}
+
+p {
+  background-color: #e8e9d2;
 }
 
 .formulario_manual {
@@ -20,12 +28,14 @@
   border: 3px dashed black;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  
 }
 
 .goup_box {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+
 }
 
 .etiqueta_form {
@@ -33,6 +43,7 @@
   margin-right: 10px;
   text-align: left;
   font-size: x-large;
+
 }
 
 .input_manual {
@@ -58,8 +69,12 @@
 .prediccion_manual {
   display: flex;
   align-items: center;
+  background-color: #e8e9d2;
+
 }
 
 .resultado_manual {
   padding-left: 15px;
+  background-color: #e8e9d2;
+
 }
