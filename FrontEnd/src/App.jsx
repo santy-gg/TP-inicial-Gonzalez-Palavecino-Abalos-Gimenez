@@ -9,6 +9,7 @@ import styles from "./App.module.css";
 import HomePage from "./Pages/HomePage";
 import AddManual from "./Pages/AddManual";
 import LoadUserCsv from "./Pages/LoadUserCsv";
+import CalculateWithRandomData from "./Pages/CalculateWithRandomData";
 const App = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/ingresar-csv" element={<LoadUserCsv/>}/>
           <Route path="/ingresar-datos-manualmente" element={<AddManual />} />
+          <Route path="/calcular-datos-random" element={<CalculateWithRandomData />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </Router>

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./HomePage.module.css";
-import MainInfo from "../components/MainInfo";
-import ActionButtons from "../components/ActionButtons";
-import HowTo from "../components/HowTo";
+import MainInfo from "../components/HomePage/MainInfo";
+import ActionButtons from "../components/HomePage/ActionButtons";
+import HowTo from "../components/HomePage/HowTo";
 function HomePage() {
     return (
         <>

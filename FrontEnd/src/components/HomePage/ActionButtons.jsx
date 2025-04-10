@@ -8,6 +8,11 @@ function ActionButtons() {
   const handleAddManual = () => {
     navigate("/ingresar-datos-manualmente");
   };
+
+  const handleCalculateWithRandomData = () => {
+    navigate("/calcular-datos-random")
+  };
+
   return (
     <>
       <div className={styles.action_buttons_container}>
@@ -22,6 +27,7 @@ function ActionButtons() {
             Ingresar archivo CSV
           </button>
           <button
+            onClick={handleCalculateWithRandomData}
             className={`${styles.random_button} ${styles.general_button_style}`}
           >
             Calcular con datos random
