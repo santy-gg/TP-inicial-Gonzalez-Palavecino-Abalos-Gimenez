@@ -146,7 +146,7 @@ def upload_csv():
     df = pd.read_csv(file)
 
     try:
-        X = df[['Horas_capacitacion', 'Antiguedad ', 'Calificacion_previa']]
+        X = df[['Horas_capacitacion', 'Antiguedad', 'Calificacion_previa']]
         y = df['Puntaje_desempeño']
 
         x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
