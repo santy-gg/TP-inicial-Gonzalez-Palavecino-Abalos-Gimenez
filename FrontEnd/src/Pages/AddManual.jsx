@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import FormManual from "../components/AddManual/FormManual";
 import styles from "./AddManual.module.css";
+import flechaAtras from "../../assets/flecha_atras.png";
 
 //Esqueleto de la interfaz para agregar datos manualmente y realizar una predicción
 //se usa el formulario de FormManual.
@@ -16,7 +17,7 @@ function AddManual() {
         <img
           onClick={onClick}
           className={styles.flecha_atras}
-          src="../../FrontEnd/assets/flecha_atras.png"
+          src={flechaAtras}
         />
       </section>
     </div>
