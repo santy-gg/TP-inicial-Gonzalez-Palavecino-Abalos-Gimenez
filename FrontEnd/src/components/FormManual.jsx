@@ -22,7 +22,7 @@ function FormManual() {
     try {
       //llamo al endpoint correspondiente de la api
       const response = await fetch(
-        "http://127.0.0.1:5000/ingresar_manualmente/",
+        "https://tp-inicial-gonzalez-palavecino-abalos.onrender.com/ingresar_manualmente/",
         {
           method: "POST",
           headers: {

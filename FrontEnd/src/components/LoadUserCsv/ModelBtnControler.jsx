@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./ModelBtnControler.module.css";
 
-function ModelBtnControler({ handleBtnClick, selectedFile, setModelResults }){
+function ModelBtnControler({ handleBtnClick, selectedFile, setModelResults }) {
   const handleTrainModel = async () => {
     if (!selectedFile) {
-      alert("Por favor, selecciona un archivo CSV antes de entrenar el modelo.");
+      alert(
+        "Por favor, selecciona un archivo CSV antes de entrenar el modelo."
+      );
       return;
     }
 
@@ -12,10 +14,13 @@ function ModelBtnControler({ handleBtnClick, selectedFile, setModelResults }){
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/upload_csv", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://tp-inicial-gonzalez-palavecino-abalos.onrender.com/upload_csv",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await response.json();
       alert("Modelo entrenado con éxito.");
@@ -23,7 +28,9 @@ function ModelBtnControler({ handleBtnClick, selectedFile, setModelResults }){
       console.log(data);
     } catch (error) {
       console.error("Error al entrenar el modelo:", error);
-      alert("Hubo un error al entrenar el modelo. Revisa la consola para más detalles.");
+      alert(
+        "Hubo un error al entrenar el modelo. Revisa la consola para más detalles."
+      );
     }
   };
 
@@ -47,6 +54,6 @@ function ModelBtnControler({ handleBtnClick, selectedFile, setModelResults }){
       </div>
     </>
   );
-};
+}
 
 export default ModelBtnControler;

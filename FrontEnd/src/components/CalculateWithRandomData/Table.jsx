@@ -8,7 +8,9 @@ function Table() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/random_data_with_prediction");
+        const response = await fetch(
+          "https://tp-inicial-gonzalez-palavecino-abalos.onrender.com/random_data_with_prediction"
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -22,28 +24,26 @@ function Table() {
   }, []);
 
   return (
-    
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th className={styles.th}>Antiguedad</th>
-            <th className={styles.th}>Calificacion previa</th>
-            <th className={styles.th}>Horas capacitacion</th>
-            <th className={styles.th}>Puntaje desempeño predicho</th>
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          <th className={styles.th}>Antiguedad</th>
+          <th className={styles.th}>Calificacion previa</th>
+          <th className={styles.th}>Horas capacitacion</th>
+          <th className={styles.th}>Puntaje desempeño predicho</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tableData.map((row, index) => (
+          <tr key={index}>
+            <td className={styles.td}>{row.Antiguedad}</td>
+            <td className={styles.td}>{row.Calificacion_previa}</td>
+            <td className={styles.td}>{row.Horas_capacitacion}</td>
+            <td className={styles.td}>{row.Puntaje_desempeño_predicho}</td>
           </tr>
-        </thead>
-        <tbody>
-          {tableData.map((row, index) => (
-            <tr key={index}>
-              <td className={styles.td}>{row.Antiguedad}</td>
-              <td className={styles.td}>{row.Calificacion_previa}</td>
-              <td className={styles.td}>{row.Horas_capacitacion}</td>
-              <td className={styles.td}>{row.Puntaje_desempeño_predicho}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    
+        ))}
+      </tbody>
+    </table>
   );
 }
 
