@@ -16,7 +16,7 @@ function AddManual() {
         <img
           onClick={onClick}
           className={styles.flecha_atras}
-          src="FrontEnd/assets/flecha-atras.png"
+          src="../../assets/flecha-atras.png"
         />
       </section>
     </div>
