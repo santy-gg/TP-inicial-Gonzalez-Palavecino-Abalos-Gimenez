@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./LoadCsvHeader.module.css";
-export const LoadCsvHeader = () => {
+function LoadCsvHeader(){
   return (
     <header>
       <nav>
@@ -15,3 +15,5 @@ export const LoadCsvHeader = () => {
     </header>
   );
 };
+
+export default LoadCsvHeader;

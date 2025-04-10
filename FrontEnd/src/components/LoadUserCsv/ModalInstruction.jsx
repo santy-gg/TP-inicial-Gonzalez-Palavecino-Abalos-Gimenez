@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ModalInstruction.module.css'
-export const ModalInstruction = ({handleBtnClick}) => {
+function ModalInstruction({handleBtnClick}){
   return (
     <>
         <div className={styles.modal_background_container}>
@@ -19,3 +19,4 @@ export const ModalInstruction = ({handleBtnClick}) => {
   )
 }
 
+export default ModalInstruction;

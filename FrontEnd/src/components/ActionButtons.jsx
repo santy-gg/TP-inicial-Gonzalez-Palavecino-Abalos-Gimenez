@@ -16,7 +16,7 @@ function ActionButtons() {
         </div>
         <div className={styles.buttons_container}>
           <button
-            onClick={() =>  navigate('/ingresar-csv')}
+            onClick={() => navigate("/ingresar-csv")}
             className={`${styles.csv_button} ${styles.general_button_style}`}
           >
             Ingresar archivo CSV
