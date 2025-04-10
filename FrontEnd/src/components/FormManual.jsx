@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./FormManual.module.css";
 
+//Formulario para realizar la prediccion ingresando manualmente tres datos individuales.
+
 function FormManual() {
   const [horas_capacitacion, setHoras_capacitacion] = useState("");
   const [antiguedad, setAntiguedad] = useState("");
@@ -10,7 +12,7 @@ function FormManual() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    //preparo los datos que voy a enviar a la api
     const data = {
       Horas_capacitacion: horas_capacitacion,
       Antiguedad: antiguedad,
@@ -18,6 +20,7 @@ function FormManual() {
     };
 
     try {
+      //llamo al endpoint correspondiente de la api
       const response = await fetch(
         "http://127.0.0.1:5000/ingresar_manualmente/",
         {
@@ -102,5 +105,6 @@ function FormManual() {
     </>
   );
 }
-
+//se piden los tres datos al usuario, Horas_capacitacion, Antiguedad y Calificacion_previa y se la envia a la api
+//ñuego la api realiza la prediccion y es mostrado en pantalla en Resultado de la prediccion con la variable predictionResult.
 export default FormManual;
