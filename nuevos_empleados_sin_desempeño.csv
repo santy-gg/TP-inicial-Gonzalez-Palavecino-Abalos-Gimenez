@@ -1,5 +1,5 @@
 nombre,area,puntaje,cantidad_proyectos,personas_equipo,horas_extra,asistencia_puntualidad,desempeño
-Nuevo Empleado 1,ventas,88,4,5,False,92,85
+Nuevo Empleado 1,ventas,20,4,5,False,10,40
 Nuevo Empleado 2,administracion,76,1,6,True,85,70
 Nuevo Empleado 3,seguridad,70,3,4,False,90,68
 Nuevo Empleado 4,ventas,92,2,7,True,98,91
